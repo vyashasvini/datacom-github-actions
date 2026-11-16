@@ -1,0 +1,14 @@
+name: Datacom GitHub Actions Workflow
+on: [push]
+jobs:
+greet-job:
+  runs-on: ubuntu-latest
+  steps:
+  - name: Check out repository code
+    uses: actions/checkout@v4
+  - name: Run a welcome script using GitHub variables
+    run: |
+      echo "Hello ${{github.actor }}!"
+      echo "Repository: ${{github.repository}}"
+      echo "Branch: ${{ github.ref_name}}"
+    
